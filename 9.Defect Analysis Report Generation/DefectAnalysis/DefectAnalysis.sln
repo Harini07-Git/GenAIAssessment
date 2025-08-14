@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DefectAnalysis.Core", "DefectAnalysis.Core\DefectAnalysis.Core.csproj", "{172D5BED-8E8A-4EBE-8CE7-0F806275E227}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DefectAnalysis.Tests", "DefectAnalysis.Tests\DefectAnalysis.Tests.csproj", "{B66F32B1-FF4A-4396-8E77-F75D65942B0E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{172D5BED-8E8A-4EBE-8CE7-0F806275E227}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{172D5BED-8E8A-4EBE-8CE7-0F806275E227}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{172D5BED-8E8A-4EBE-8CE7-0F806275E227}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{172D5BED-8E8A-4EBE-8CE7-0F806275E227}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B66F32B1-FF4A-4396-8E77-F75D65942B0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B66F32B1-FF4A-4396-8E77-F75D65942B0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B66F32B1-FF4A-4396-8E77-F75D65942B0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B66F32B1-FF4A-4396-8E77-F75D65942B0E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

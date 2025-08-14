@@ -1,0 +1,85 @@
+Create a defect analysis report based on bug tracking system data with the following specifications:
+
+1. Data Analysis Requirements:
+   - Analyze defect data from [specific time period/release version]
+   - Focus on critical metrics including:
+     * Severity distribution (Critical/High/Medium/Low)
+     * Root cause categorization
+     * Resolution time analysis
+     * Module/component-wise defect distribution
+
+2. Trend Analysis:
+   - Identify patterns in:
+     * Most frequently affected components
+     * Common root causes
+     * Peak defect occurrence periods
+     * Resolution time variations
+
+3. Statistical Analysis:
+   - Calculate and present:
+     * Mean Time To Resolution (MTTR) by severity
+     * Defect density per component
+     * Week-over-week/Month-over-month trend comparison
+     * Quality metrics (e.g., defect leakage ratio)
+
+4. Report Structure:
+   Executive Summary:
+   - Key findings and metrics
+   - High-level overview of defect trends
+   - Critical areas requiring immediate attention
+
+   Detailed Analysis:
+   - Severity distribution with graphical representation
+   - Root cause analysis breakdown
+   - Component-wise defect distribution
+   - Resolution time analysis by severity and component
+
+   Risk Assessment:
+   - High-risk areas identification
+   - Potential impact on project timelines
+   - Quality bottlenecks
+
+   Recommendations:
+   - Specific actionable items for each major finding
+   - Process improvement suggestions
+   - Preventive measures for recurring issues
+   - Resource allocation recommendations
+
+5. Visual Requirements:
+   - Include charts/graphs for:
+     * Severity distribution (pie chart)
+     * Trend analysis (line graph)
+     * Resolution time comparison (bar chart)
+     * Component-wise distribution (heat map)
+
+6. Business Context:
+   - Align findings with:
+     * Project quality goals
+     * Service Level Agreements (SLAs)
+     * Release milestones
+     * Resource utilization
+
+7. Format Specifications:
+   - Use clear, concise business language
+   - Include executive summary limited to one page
+   - Provide detailed analysis in subsequent sections
+   - Use consistent formatting for all charts and tables
+   - Include timestamp and data source information
+
+8. Report Output:
+   - Generate in both PDF and HTML formats
+   - Ensure mobile-responsive design for HTML version
+   - Include interactive charts in HTML version
+   - Maintain consistent branding elements
+
+9. Delivery Requirements:
+   - Generate report [frequency: daily/weekly/monthly]
+   - Include comparison with previous reporting period
+   - Highlight significant changes or anomalies
+   - Flag items requiring immediate attention
+
+10. Success Metrics:
+    - Accuracy of trend prediction
+    - Actionability of recommendations
+    - Clarity of presentation
+    - Timeliness of delivery
