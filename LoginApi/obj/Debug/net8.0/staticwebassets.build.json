@@ -1,0 +1,39 @@
+{
+  "Version": 1,
+  "Hash": "QPUnM/cH30hZfV1CgjytcpeSRddQWmZrTiYkDoj1d8o=",
+  "Source": "LoginApi",
+  "BasePath": "_content/LoginApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "LoginApi\\wwwroot",
+      "Source": "LoginApi",
+      "ContentRoot": "C:\\Users\\HariniKusuma\\OneDrive - ValueMomentum, Inc\\Documents\\GenAIAssessment\\LoginApi\\wwwroot\\",
+      "BasePath": "_content/LoginApi",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\HariniKusuma\\OneDrive - ValueMomentum, Inc\\Documents\\GenAIAssessment\\LoginApi\\wwwroot\\index.html",
+      "SourceId": "LoginApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HariniKusuma\\OneDrive - ValueMomentum, Inc\\Documents\\GenAIAssessment\\LoginApi\\wwwroot\\",
+      "BasePath": "_content/LoginApi",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ]
+}

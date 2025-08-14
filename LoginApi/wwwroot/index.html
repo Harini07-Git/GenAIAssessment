@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .error { 
+            color: red; 
+            margin: 10px 0;
+        }
+        .success { 
+            color: green; 
+            margin: 10px 0;
+        }
+        .form-group { 
+            margin: 10px 0; 
+        }
+        input {
+            padding: 5px;
+            margin: 5px 0;
+            width: 100%;
+        }
+        button {
+            padding: 8px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        #messageBox {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Login Management</h1>
+    
+    <div id="messageBox"></div>
+    
+    <div class="form-group">
+        <input type="number" id="loginId" placeholder="Login ID (for GET, PUT, DELETE)">
+    </div>
+    
+    <div class="form-group">
+        <input type="text" id="username" placeholder="Username" required minlength="3" maxlength="50">
+    </div>
+    
+    <div class="form-group">
+        <input type="email" id="email" placeholder="Email" required>
+    </div>
+    
+    <div class="form-group">
+        <input type="password" id="password" placeholder="Password" required minlength="6">
+    </div>
+    
+    <div class="form-group">
+        <button onclick="getLogin()">Get Login</button>
+        <button onclick="createLogin()">Create Login</button>
+        <button onclick="updateLogin()">Update Login</button>
+        <button onclick="deleteLogin()">Delete Login</button>
+    </div>
+
+    <script>
+        const apiUrl = '/api/logins';
+        const messageBox = document.getElementById('messageBox');
+
+        function showMessage(message, isError = false) {
+            messageBox.textContent = message;
+            messageBox.className = isError ? 'error' : 'success';
+        }
+
+        function validateInputs(isCreate = true) {
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (!isCreate && !document.getElementById('loginId').value) {
+                showMessage('Login ID is required', true);
+                return false;
+            }
+
+            if (username.length < 3 || username.length > 50) {
+                showMessage('Username must be between 3 and 50 characters', true);
+                return false;
+            }
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                showMessage('Invalid email format', true);
+                return false;
+            }
+
+            if (password.length < 6) {
+                showMessage('Password must be at least 6 characters', true);
+                return false;
+            }
+
+            return true;
+        }
+
+        async function getLogin() {
+            const id = document.getElementById('loginId').value;
+            if (!id) {
+                showMessage('Please enter a Login ID', true);
+                return;
+            }
+
+            try {
+                const response = await fetch(`${apiUrl}/${id}`);
+                const data = await response.json();
+
+                if (response.ok) {
+                    document.getElementById('username').value = data.username;
+                    document.getElementById('email').value = data.email;
+                    document.getElementById('password').value = data.password;
+                    showMessage('Login details retrieved successfully');
+                } else {
+                    showMessage(data.message || 'Error retrieving login details', true);
+                }
+            } catch (error) {
+                showMessage('Error connecting to the server', true);
+            }
+        }
+
+        async function createLogin() {
+            if (!validateInputs(true)) return;
+
+            const loginData = {
+                username: document.getElementById('username').value,
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value
+            };
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(loginData)
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    showMessage('Login created successfully');
+                    document.getElementById('loginId').value = data.id;
+                } else {
+                    showMessage(data.message || 'Error creating login', true);
+                }
+            } catch (error) {
+                showMessage('Error connecting to the server', true);
+            }
+        }
+
+        async function updateLogin() {
+            if (!validateInputs(false)) return;
+
+            const id = document.getElementById('loginId').value;
+            const loginData = {
+                id: parseInt(id),
+                username: document.getElementById('username').value,
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value
+            };
+
+            try {
+                const response = await fetch(`${apiUrl}/${id}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(loginData)
+                });
+
+                if (response.ok) {
+                    showMessage('Login updated successfully');
+                } else {
+                    const data = await response.json();
+                    showMessage(data.message || 'Error updating login', true);
+                }
+            } catch (error) {
+                showMessage('Error connecting to the server', true);
+            }
+        }
+
+        async function deleteLogin() {
+            const id = document.getElementById('loginId').value;
+            if (!id) {
+                showMessage('Please enter a Login ID', true);
+                return;
+            }
+
+            try {
+                const response = await fetch(`${apiUrl}/${id}`, {
+                    method: 'DELETE'
+                });
+
+                if (response.ok) {
+                    showMessage('Login deleted successfully');
+                    // Clear the form
+                    document.getElementById('loginId').value = '';
+                    document.getElementById('username').value = '';
+                    document.getElementById('email').value = '';
+                    document.getElementById('password').value = '';
+                } else {
+                    const data = await response.json();
+                    showMessage(data.message || 'Error deleting login', true);
+                }
+            } catch (error) {
+                showMessage('Error connecting to the server', true);
+            }
+        }
+    </script>
+</body>
+</html>

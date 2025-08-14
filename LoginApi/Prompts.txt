@@ -1,0 +1,31 @@
+Prompts used in creating this Login API:
+
+1. Initial API Creation Prompt:
+"Create a .NET Web API controller class named LoginController for a UserLogin entity. Implement CRUD endpoints:
+GET /api/logins/{id} → Get login details by ID
+POST /api/logins → Create a new login
+PUT /api/logins/{id} → Update login details by ID
+DELETE /api/logins/{id} → Delete login by ID
+
+Requirements:
+- Use ApiController and route attributes ([HttpGet], [HttpPost], etc.)
+- Return proper HTTP status codes (200 OK, 201 Created, 404 NotFound, 400 BadRequest)
+- Use model validation attributes like [Required], [EmailAddress], [StringLength]
+- Implement error handling using try/catch blocks and return meaningful error messages
+- Use dependency injection for a ILoginService that contains business logic, and a repository or EF Core DbContext for data access
+- Ensure the code compiles and is production-ready
+- Generate a simple HTML page with JavaScript that has input fields for username/password and CRUD buttons (GET, POST, PUT, DELETE) that call the API using fetch()
+- Validate inputs on the client side before sending API requests, and show API responses with success/error messages"
+
+
+2. Documentation Prompt:
+"include a single Prompts.txt file in your repository that lists all your prompts"
+
+These prompts resulted in the creation of:
+1. A complete .NET 8 Web API with CRUD operations
+2. Model with validation attributes
+3. Service layer with interface and implementation
+4. Controller with proper routing and error handling
+5. Client-side HTML/JavaScript interface
+6. Program.cs with proper service configuration
+7. This documentation file
