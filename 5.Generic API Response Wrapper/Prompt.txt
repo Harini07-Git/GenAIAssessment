@@ -1,0 +1,41 @@
+Create a C# generic class named ApiResponse<T> to serve as a standardized API response wrapper for both success and error cases in a .NET 8 Web API project.
+
+Requirements:
+
+1. Generic Type Support:
+   - Support wrapping any data type (T)
+   - Handle single objects, collections, and primitive types
+
+2. Metadata Fields:
+   - Timestamp (UTC DateTime)
+   - RequestId (string, unique per request)
+   - Pagination support (optional)
+     * PageNumber
+     * PageSize
+     * TotalItems
+     * TotalPages
+
+3. Status Indicators:
+   - Success (bool)
+   - StatusCode (int)
+   - ErrorCode (string, optional)
+   - Message (string)
+
+4. Builder Pattern Methods:
+   - ApiResponse<T>.SuccessResponse(data, message, statusCode)
+   - ApiResponse<T>.ErrorResponse(errorCode, message, statusCode)
+   - ApiResponse<T>.PaginatedResponse(data, pageNumber, pageSize, totalItems, totalPages)
+
+5. Features:
+   - JSON serialization support
+   - XML documentation for public methods
+   - Clean code principles
+
+6. Unit Testing:
+   - Test success responses
+   - Test error responses
+   - Test paginated responses
+   - Test null/empty data cases
+
+7. Sample Usage:
+   - Demonstrate in a controller method
