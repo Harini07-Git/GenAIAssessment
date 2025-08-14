@@ -1,0 +1,45 @@
+Write a .NET 7 Web API login controller and security service that implements comprehensive security following industry standards (OWASP/NIST).
+
+Requirements:
+
+1. Authentication
+- Implement OAuth 2.0 and JWT authentication
+- Generate JWT token with user claims and roles on successful login
+- Add token expiration and refresh token mechanism
+- Secure all endpoints with [Authorize] and role-based access control
+
+2. Input Validation
+- Validate login requests with data annotations and custom validators
+- Enforce password complexity rules and reject invalid input
+- Prevent SQL injection and XSS attacks
+
+3. Audit Logging
+Create a logging service to store:
+- Successful login events (with timestamp, user, IP)
+- Failed login attempts
+- Token refresh events
+- Unauthorized access attempts
+- Store logs in a secure location with retention policy
+
+4. Best Practices
+- Use bcrypt or PBKDF2 for password hashing
+- Force HTTPS for all endpoints
+- Lock account after multiple failed login attempts
+
+Deliverables:
+1. AuthController.cs with Login, RefreshToken, and Logout endpoints
+2. AuthService.cs handling authentication, token generation, and validation
+3. AuditLogService.cs for security event logging
+4. Example unit tests for authentication logic
+
+Implementation Details:
+- Build using .NET 8 Web API
+- Use JWT Bearer authentication
+- Implement account lockout after 5 failed attempts
+- 15-minute token expiration with refresh token mechanism
+- BCrypt for secure password hashing
+- Comprehensive audit logging with 90-day retention
+- Role-based access control
+- Swagger UI with security configuration
+- HTTPS enforcement
+- Input validation using data annotations
