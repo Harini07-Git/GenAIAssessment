@@ -1,0 +1,29 @@
+Prompts used for code generation:
+
+1. LoginService Implementation Prompt:
+Create a .NET 8 C# class LoginService in the Business Service Layer that provides user authentication and authorization.
+
+Requirements:
+- Implement three public methods:
+  * Task<string> LoginAsync(string username, string password) → Authenticates user, returns a JWT token
+  * Task LogoutAsync(string token) → Invalidates the token
+  * bool ValidateToken(string token, out ClaimsPrincipal userPrincipal) → Validates JWT token and returns authenticated principal
+
+- Use role-based authorization:
+  * Extract roles from token claims
+  * Add method bool HasRequiredRole(ClaimsPrincipal user, string requiredRole)
+
+- Handle common authentication exceptions:
+  * InvalidCredentialsException if login fails
+  * TokenExpiredException if token is expired
+  * UnauthorizedAccessException for role mismatch
+
+- Use dependency injection for IUserRepository interface
+- Secure password storage with BCrypt hashing
+- Generate JWT tokens using System.IdentityModel.Tokens.Jwt
+- Include XML documentation comments
+- Include xUnit tests with Moq framework
+
+This prompt generated:
+- Services/LoginService.cs
+- Services/LoginServiceTests.cs
