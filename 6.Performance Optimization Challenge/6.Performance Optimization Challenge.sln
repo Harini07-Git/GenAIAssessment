@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClaimsManagement.API", "ClaimsManagement.API\ClaimsManagement.API.csproj", "{123ACA19-1387-B0B0-C77A-33DD853652EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{123ACA19-1387-B0B0-C77A-33DD853652EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{123ACA19-1387-B0B0-C77A-33DD853652EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{123ACA19-1387-B0B0-C77A-33DD853652EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{123ACA19-1387-B0B0-C77A-33DD853652EE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {793A3FCE-F577-4D24-A8A9-7A89A1985061}
+	EndGlobalSection
+EndGlobal

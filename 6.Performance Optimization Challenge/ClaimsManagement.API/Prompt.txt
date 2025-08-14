@@ -1,0 +1,32 @@
+You can use this prompt to create a .NET 8 Web API project with performance optimization features:
+
+"Create a .NET 8 Web API project for claims management with the following features:
+
+1. In-Memory Caching:
+- Implement IMemoryCache for frequently accessed data
+- Configure cache expiration policies
+- Include cache invalidation methods
+
+2. Pagination:
+- Server-side pagination for large datasets
+- Support for pageNumber and pageSize parameters
+- Return metadata with total items and pages
+
+3. Entity Framework Core Optimization:
+- Implement lazy loading
+- Use selective Include() statements
+- Optimize query patterns
+
+4. Performance Monitoring:
+- Create /metrics endpoint
+- Track response times and cache statistics
+- Integrate with System.Diagnostics.Metrics
+
+5. Clean Architecture:
+- Separate caching and monitoring services
+- Follow SOLID principles
+- Include comprehensive unit tests
+
+The solution should demonstrate best practices for performance optimization in a real-world application."
+
+This prompt focuses on essential performance features while maintaining clean code architecture and testability.
