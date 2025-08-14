@@ -1,0 +1,33 @@
+Create a .NET 8 Web API middleware class named GlobalExceptionHandlerMiddleware to provide centralized exception handling for the application.
+
+Requirements:
+
+1. Catch all unhandled exceptions globally using custom middleware
+2. Map exceptions to appropriate HTTP status codes and user-friendly error messages:
+   - ValidationException → 400 Bad Request (include validation error details)
+   - BusinessLogicException → 409 Conflict (custom business error)
+   - NotFoundException → 404 Not Found
+   - Any other exception → 500 Internal Server Error
+
+3. Implement consistent JSON error response format:
+{
+  "statusCode": 400,
+  "message": "Validation failed",
+  "details": ["Error 1", "Error 2"]
+}
+
+4. Use ILogger<GlobalExceptionHandlerMiddleware> to log:
+   - Error message
+   - Stack trace (only in development)
+   - Request details (method, path, query params)
+
+5. Ensure sensitive data (like connection strings) is never included in responses
+6. Register middleware in Program.cs for all API requests
+7. Follow clean code principles and async best practices
+8. Add XML documentation comments for public methods
+
+9. Unit tests (xUnit + Moq) for:
+   - Validation errors
+   - Business logic errors
+   - System errors
+   - Correct HTTP status mapping
