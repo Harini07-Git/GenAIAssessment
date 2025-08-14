@@ -1,0 +1,170 @@
+# .NET 8 Web API Legacy Migration Challenge
+
+## Background
+You are tasked with upgrading a .NET 8 Web API application that contains legacy methods from older framework versions. The goal is to modernize the application while maintaining backward compatibility and ensuring zero downtime during the migration process.
+
+## Core Requirements
+
+### 1. Configuration Modernization
+- Migrate from web.config/legacy JSON to appsettings.json
+- Implement environment-based configuration (appsettings.{Environment}.json)
+- Update:
+  - Connection strings
+  - Logging configurations
+  - Middleware registrations
+
+### 2. API Modernization
+- Identify and replace deprecated .NET APIs
+- Update obsolete third-party library methods
+- Maintain existing functionality through the transition
+- Implement compatibility layers for breaking changes
+
+### 3. Feature Flag Implementation
+- Use Microsoft.FeatureManagement
+- Enable side-by-side operation of old and new methods
+- Configure gradual rollout capability
+- Implement feature toggle controls
+
+### 4. Backward Compatibility
+- Use adapter/facade patterns for legacy API contracts
+- Implement comprehensive unit testing
+- Verify both old and new implementations
+- Maintain existing API contracts
+
+### 5. Deployment Strategy
+- Make small, incremental changes
+- Use dependency injection for runtime switching
+- Enable zero-downtime deployments
+- Implement rollback capabilities
+
+## Implementation Details
+
+### Required Files Structure
+```
+src/
+  ├── appsettings.json
+  ├── appsettings.Development.json
+  ├── Program.cs
+  ├── Compatibility/
+  │   └── LegacyCompatibilityLayer.cs
+  ├── Authentication/
+  │   └── AuthenticationService.cs
+  └── Controllers/
+      └── AuthController.cs
+tests/
+  └── AuthenticationTests.cs
+```
+
+### Key Components
+
+1. Configuration Files
+- Modern JSON-based configuration
+- Environment-specific overrides
+- Feature management settings
+- Legacy compatibility options
+
+2. Compatibility Layer
+- Feature flag management
+- Implementation switching logic
+- Generic compatibility interfaces
+
+3. Authentication System Example
+- Legacy and modern implementations
+- Factory pattern for implementation selection
+- Feature flag controlled switching
+
+4. API Controllers
+- Modern implementation patterns
+- Backward compatibility maintenance
+- Comprehensive documentation
+- Migration notes in comments
+
+5. Unit Tests
+- Test both implementations
+- Feature flag verification
+- Compatibility validation
+- Integration testing
+
+## Documentation Requirements
+
+### Method Migration Documentation
+For each updated method, include:
+- Reason for update
+- New APIs/libraries used
+- Backward compatibility approach
+- Migration path
+
+### Code Comments
+Include detailed comments explaining:
+- Why changes were made
+- How backward compatibility is maintained
+- Feature flag usage
+- Breaking changes handled
+
+## Success Criteria
+
+1. Configuration
+- Successfully migrated to modern configuration system
+- Environment-specific configurations working
+- Feature flags properly configured
+
+2. Functionality
+- All existing features working
+- Both old and new implementations functional
+- No breaking changes for consumers
+- Successful gradual rollout capability
+
+3. Testing
+- All unit tests passing
+- Both implementations verified
+- Integration tests successful
+- Performance testing completed
+
+4. Documentation
+- Complete migration documentation
+- Code comments comprehensive
+- API changes documented
+- Rollback procedures detailed
+
+## Example Implementations
+
+The provided code examples demonstrate:
+1. Modern configuration structure
+2. Feature flag implementation
+3. Compatibility layer pattern
+4. Authentication service migration
+5. Unit testing approach
+6. Documentation standards
+
+## Deliverables
+
+1. Updated configuration files
+2. Modernized API implementations
+3. Compatibility layer
+4. Feature flag system
+5. Unit tests
+6. Documentation
+7. Migration guides
+
+## Technical Considerations
+
+1. Use the latest .NET 8 features appropriately
+2. Implement proper dependency injection
+3. Follow SOLID principles
+4. Maintain clean architecture
+5. Ensure proper error handling
+6. Implement logging and monitoring
+7. Consider performance implications
+
+## Migration Strategy
+
+1. Analyze and document legacy components
+2. Create compatibility layer
+3. Implement feature flags
+4. Create new implementations
+5. Add comprehensive tests
+6. Deploy gradually
+7. Monitor and validate
+8. Remove legacy code when safe
+
+Remember to maintain backward compatibility throughout the migration process and use feature flags to control the rollout of new implementations.
