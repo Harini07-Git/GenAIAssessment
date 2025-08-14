@@ -1,0 +1,51 @@
+Create a .NET 7 C# class called PaymentGatewayService to integrate with a third-party payment API.
+
+Requirements:
+
+Implement the following public async methods:
+
+Task<PaymentResponse> ProcessPaymentAsync(PaymentRequest request) → Sends payment request to API.
+
+Task<RefundResponse> ProcessRefundAsync(RefundRequest request) → Initiates refund via API.
+
+Task<PaymentStatusResponse> GetPaymentStatusAsync(string transactionId) → Retrieves transaction status.
+
+Configure HttpClient using IHttpClientFactory with:
+
+Base address from configuration (appsettings.json).
+
+Default timeout of 30 seconds.
+
+Retry policy using Polly (3 retries, exponential backoff).
+
+Map API responses to strongly-typed DTOs (PaymentResponse, RefundResponse, PaymentStatusResponse).
+
+Implement error handling:
+
+Throw PaymentProcessingException for failed payments.
+
+Throw RefundProcessingException for failed refunds.
+
+Throw ApiCommunicationException for network issues.
+
+Implement logging using ILogger<PaymentGatewayService>:
+
+Log all requests and responses (mask sensitive fields like card numbers).
+
+Log retries and failures for audit trail.
+
+Use dependency injection for configuration and HttpClient.
+
+Ensure unit test coverage using xUnit + Moq for:
+
+Successful payment processing.
+
+Failed API call (network error).
+
+Retry logic execution.
+
+Response mapping correctness.
+
+Add XML documentation comments for all public methods.
+
+Code must be production-ready and follow clean architecture principles.
