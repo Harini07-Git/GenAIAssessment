@@ -1,0 +1,56 @@
+Generate a comprehensive architecture analysis report for an existing system that evaluates:
+
+1. System Architecture Analysis
+   - Current architecture patterns and practices
+   - Component relationships and dependencies
+   - Integration points and communication patterns
+   - Data flow and storage mechanisms
+   - Authentication and authorization mechanisms
+
+2. Technical Debt Assessment
+   - Outdated frameworks and libraries
+   - Code duplication and complexity
+   - Missing or inadequate documentation
+   - Tight coupling between components
+   - Lack of automated tests
+   - Legacy code patterns
+
+3. Security Vulnerabilities
+   - Authentication gaps
+   - Authorization vulnerabilities
+   - Data protection concerns
+   - Input validation issues
+   - Sensitive data exposure
+   - Security best practices compliance
+
+4. Scalability Analysis
+   - Performance bottlenecks
+   - Resource utilization patterns
+   - Caching strategies
+   - Asynchronous processing implementation
+   - Database optimization opportunities
+   - Load handling capabilities
+
+5. Modernization Opportunities
+   - Cloud-native transformation potential
+   - Containerization candidates
+   - Microservices adoption possibilities
+   - Serverless computing opportunities
+   - Modern framework migration paths
+
+6. Best Practices Alignment
+   - Design pattern implementation
+   - SOLID principles adherence
+   - Clean code practices
+   - Error handling patterns
+   - Logging and monitoring implementation
+
+Please provide detailed analysis with:
+- Severity levels (High/Medium/Low) for each finding
+- Impact assessment on system stability and maintenance
+- Clear recommendations for improvements
+- Implementation complexity estimation
+- Priority order for addressing issues
+- Estimated effort for remediation
+
+The report should be actionable and provide clear next steps for architectural improvements.
